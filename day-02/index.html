@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-02</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="./app.js"></script> -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <section class="main_frame">
+
+        <div class="center">
+
+            <div class="menu_icon">
+                <div class="line_1 no-animation"></div>
+                <div class="line_2 no-animation"></div>
+                <div class="line_3 no-animation"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        $('.menu_icon').bind('click', function() {
+	$(this).toggleClass('active');
+	$(this).find('div').removeClass('no-animation');
+});
+    </script>
+
+</body>
+</html>
