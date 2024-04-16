@@ -1,0 +1,244 @@
+
+.main_frame{
+    position: relative;
+    height: 400px;
+    width: 400px;
+    border-radius: 2px;
+	box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+	background: #42A7A1;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	color: #fff;
+}
+
+.card{
+    position: absolute;
+    height: 220px;
+    width: 280px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+	border-radius: 3px;
+	box-shadow: 10px 10px 15px 0 rgba(0,0,0,0.3);
+	overflow: hidden;
+}
+
+.header{
+    position: relative;
+    width: 100%;
+    background: #F1BA64;
+	color: #fff;
+    padding: 12px 8px;
+}
+
+.title{
+    margin: 0px;
+    font-size: 16px;
+
+}
+
+.date{
+    margin: 0px;
+    font-size: 11px;
+    font-weight: 400;
+    padding-top: 2px;
+}
+
+.type {
+    margin: 0px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+h6.value {
+    margin: 0px;
+    font-size: 16px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.type_and_value{
+    padding-right: 18px;
+}
+
+.title_date{
+    padding-left: 10px;
+}
+
+.parameter{
+    position: relative;
+    text-align: right;
+    padding: 6px 0px;
+}
+
+.parameter span {
+    position: relative;
+    font-size: 9px;
+    color: #606060;
+    line-height: 13px;
+    padding: 0 10px 0 25px;
+}
+
+.parameter span:before {
+    position: absolute;
+    left: 9px;
+    top: 4px;
+    display: block;
+    content: '';
+    width: 11px;
+    height: 3px;
+    border-radius: 3px;
+}
+
+.parameter .red::before{
+    background-color: crimson;
+}
+
+.parameter .blue::before{
+    background-color: blue;
+}
+
+.statistic {
+    position: relative;
+    height: 81px;
+    width: 260px;
+    margin: 0 auto;
+}
+
+.statistic .line-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px; 
+    background: #F2F2F2;
+}
+
+.statistic .line-2 {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    height: 1px; 
+    background: #F2F2F2;
+}
+
+.statistic .line-3 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px; 
+    background: #F2F2F2;
+}
+
+.data svg{
+    position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.data polyline {
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.statistic .red polyline{
+    stroke: crimson;
+}
+
+.statistic .blue polyline{
+    stroke: blue;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 13px;
+    left: 50%;
+    transform: translate3d(-50%, 10px, 0);
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 11px;
+    color: #fff;
+    padding: 8px 6px;
+    border-radius: 3px;
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.4s ease-out 0s, opacity 0.4s ease-out 0s;
+}
+
+.tooltip::after {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 6px;
+    width: 6px;
+    left: 50%;
+    margin-left: -3px;
+    bottom: -3px;
+    transform: rotate(45deg);
+}
+
+[class^="point-"] {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+[class^="point-"]:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translate3d(-50%, 0, 0);
+}
+
+.statistic .red [class^="point-"], .tooltip, .tooltip:after {
+    background: crimson;
+}
+
+.statistic .red  .point-1 { left: 7px; top: 43px; }
+.statistic .red  .point-2 { left: 48px; top: 9px; }
+.statistic .red  .point-3 { left: 88px; top: 20px; }
+.statistic .red  .point-4 { left: 128px; top: 8px; }
+.statistic .red  .point-5 { left: 169px; top: 35px; }
+.statistic .red  .point-6 { left: 209px; top: 45px; }
+.statistic .red  .point-7 { left: 249px; top: 16px; }
+
+.statistic .blue [class^="point-"], .tooltip, .tooltip:after {
+    background: blue;
+}
+
+.statistic .blue  .point-1 { left: 7px; top: 58px; }
+.statistic .blue  .point-2 { left: 48px; top: 47px; }
+.statistic .blue  .point-3 { left: 88px; top: 62px; }
+.statistic .blue  .point-4 { left: 128px; top: 52px; }
+.statistic .blue  .point-5 { left: 169px; top: 58px; }
+.statistic .blue  .point-6 { left: 209px; top: 71px; }
+.statistic .blue  .point-7 { left: 249px; top: 61px; }
+
+
+.days {
+    width: 280px;
+    margin: 0 auto;
+}
+
+.day {
+    display: block;
+    float: left;
+    width: calc(100% / 7);
+    font-size: 9px;
+    color: #949494;
+    line-height: 30px;
+    text-transform: uppercase;
+    text-align: center;
+}
